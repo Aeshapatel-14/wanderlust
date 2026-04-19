@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-md sticky-top custom-navbar">
+  <div class="container-fluid">
+
+    <!-- LEFT -->
+    <a class="navbar-brand fw-bold text-danger" href="/listings">
+      <i class="fa-solid fa-compass"></i> Airbib
+    </a>
+
+    <button 
+      class="navbar-toggler" 
+      type="button" 
+      data-bs-toggle="collapse" 
+      data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <!-- CENTER SEARCH -->
+      <div class="mx-auto">
+        <div class="search-bar">
+          <span>Anywhere</span>
+          <span class="divider">|</span>
+          <span>Any week</span>
+          <span class="divider">|</span>
+          <span class="text-muted">Add guests</span>
+
+          <button class="search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="d-flex align-items-center gap-3">
+
+        <a class="nav-link fw-semibold" href="/listings/new">
+          Airbib your home
+        </a>
+
+        <!-- PROFILE -->
+        <div class="profile-menu">
+          <i class="fa-solid fa-bars"></i>
+          <div class="profile-icon"></div>
+
+          <div class="dropdown-menu-custom">
+            <% if(!currUser){ %>
+              <a href="/login">Login</a>
+              <a href="/signup">Sign up</a>
+            <% } %>
+
+            <% if(currUser){ %>
+              <a href="/logout">Logout</a>
+            <% } %>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</nav>
