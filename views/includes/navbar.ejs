@@ -44,14 +44,12 @@
           <div class="profile-icon"></div>
 
           <div class="dropdown-menu-custom">
-            <% if(!currUser){ %>
-              <a href="/login">Login</a>
-              <a href="/signup">Sign up</a>
-            <% } %>
-
-            <% if(currUser){ %>
-              <a href="/logout">Logout</a>
-            <% } %>
+            <% if(typeof currUser === "undefined" || !currUser){ %>
+  <a href="/login">Login</a>
+  <a href="/signup">Sign up</a>
+<% } else { %>
+  <a href="/logout">Logout</a>
+<% } %>
           </div>
         </div>
 
