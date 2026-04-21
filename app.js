@@ -81,7 +81,7 @@ app.get("/", (req, res) => {
 
   app.use("/listings",listingRouter);
   app.use("/listings/:id/reviews",reviewRouter);
-  app.use("/users",userRouter);
+  app.use("/",userRouter);
 
 app.use((req, res, next) => {
   res.status(404).render("error.ejs", { message: "Page Not Found" });
