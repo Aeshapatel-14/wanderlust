@@ -81,7 +81,7 @@ app.get("/", (req, res) => {
 
   app.use("/listings",listingRouter);
   app.use("/listings/:id/reviews",reviewRouter);
-  app.use("/",userRouter);
+  app.use("/users",userRouter);
 
 app.use((req, res, next) => {
   console.log("404 HIT");
