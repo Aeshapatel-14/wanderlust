@@ -29,13 +29,10 @@ module.exports.signUp=async(req,res,next)=>{
 module.exports.renderLoginForm=(req,res)=>{
     res.render("users/login.ejs");
 }
+
 module.exports.login = async (req, res) => {
   req.flash("success", "Welcome back to Wanderlust!");
-  let redirectUrl = res.locals.redirectUrl;
-  if (!redirectUrl || redirectUrl === "/login" || redirectUrl === "/signup") {
-    redirectUrl = "/listings";
-  }
-  res.redirect(redirectUrl);
+  res.redirect("/listings");   
 };
 
 //logout
