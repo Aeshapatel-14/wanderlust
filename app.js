@@ -74,8 +74,9 @@ app.use((req,res,next)=>{
   next();
 });
 
-app.get("/", (req, res) => {
-  res.redirect("/listings");
+app.get("/", (req, res, next) => {
+  req.url = "/listings";
+  next();
 });
 
   app.use("/listings",listingRouter);
@@ -83,6 +84,7 @@ app.get("/", (req, res) => {
   app.use("/",userRouter);
 
 app.use((req, res, next) => {
+  console.log("404 HIT");
   res.status(404).render("error.ejs", { message: "Page Not Found" });
 });
 
