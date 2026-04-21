@@ -84,7 +84,6 @@ app.get("/", (req, res) => {
   app.use("/users",userRouter);
 
 app.use((req, res, next) => {
-  console.log("404 HIT");
   res.status(404).render("error.ejs", { message: "Page Not Found" });
 });
 

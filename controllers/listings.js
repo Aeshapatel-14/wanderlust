@@ -5,19 +5,13 @@ const geocodingClient = mbxGeocoding({ accessToken: mapToken});
 
 // INDEX
 module.exports.index = async (req, res) => {
-
   let { category } = req.query;
-
   console.log("CATEGORY:", category);
-
   let filter = {};
-
   if (category) {
     filter.category = category;
   }
-
   const allListings = await Listing.find(filter);
-
   res.render("listings/index", { allListings, category });
 };
 
